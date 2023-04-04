@@ -1,16 +1,26 @@
 from machine import RTC
+from time import sleep
 
 
-def logPrint(myParam, outputToConsole = False, outputToFile = True, makeTimeStamp = True):
+def logPrint(myParam, outputToConsole = True, outputToFile = True, makeTimeStamp = True, led = None, numberOfBlinks = 0):
     
     if outputToConsole:
         print(f"{RTC().datetime()} - {myParam}")
     if outputToFile:
-        with open("log1.txt", "a") as f:
+        with open("log1.txt", "ab") as f:
             if makeTimeStamp:
                 f.write(f"{RTC().datetime()} - {myParam}\n")
             else:
                 f.write(f"{myParam}\n")
+    if numberOfBlinks > 0:
+        count = 0
+        while count < numberOfBlinks:
+            count = count + 1
+            led.on()
+            sleep(0.3)
+            led.off()
+            sleep(0.1)
+        
 
 def logClean():
     import os
