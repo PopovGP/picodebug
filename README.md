@@ -8,7 +8,7 @@ Features:
 
 3. Automatic rotation of logs
 
-4. Using 8 log files of 100KB each, than automatically rotate: log1.txt, log2.txt, log3.txt, log4.txt, log5.txt, log6.txt, log7.txt, log8.txt
+4. Using 8 log files of 100KB each, then automatically rotate: log1.txt, log2.txt, log3.txt, log4.txt, log5.txt, log6.txt, log7.txt, log8.txt
 
 5. All debug messages are stored, not rewrited
 
@@ -16,24 +16,22 @@ Features:
 
 7. Output to log files and to console
 
-7. Just use __picodebug.logPrint("some log message")__ in your code
+7. Just use ```picodebug.logPrint("some log message")``` in your code
 
-8. Using, output to log file
+8. Using with output to log file
+```
+import picodebug
+picodebug.logPrint("some log message")
+```
 
-__import picodebug__
-
-__picodebug.logPrint("some log message")__
-
-
-9. Using, output to log file and console
-
-__import picodebug__
-
-__picodebug.logPrint("some log message", True)__
-
+9. Using with output to log file and console
+```
+import picodebug
+picodebug.logPrint("some log message", True)
+```
 
 10. Using, output to console only
-
-__import picodebug__
-
-__picodebug.logPrint("some log message", True, False)__
+```
+import picodebug
+picodebug.logPrint("some log message", True, False)
+```
