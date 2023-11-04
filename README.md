@@ -30,8 +30,15 @@ import picodebug
 picodebug.logPrint("some log message", True)
 ```
 
-10. Using, output to console only
+10. Using output to console only
 ```
 import picodebug
 picodebug.logPrint("some log message", True, False)
 ```
+
+11. Using with led for Pico W
+```
+board_led = machine.Pin("LED", machine.Pin.OUT)
+picodebug.logPrint("some point", led = board_led, numberOfBlinks=2)
+```
+
